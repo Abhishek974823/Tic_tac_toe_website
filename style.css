@@ -88,3 +88,26 @@ h2 {
     opacity: 0.4;
   }
 }
+@keyframes popGreen {
+  0% {
+    transform: scale(1);
+    background-color: #3DED97;
+    box-shadow: 0 0 10px #3DED97;
+  }
+  50% {
+    transform: scale(1.1);
+    background-color: #32CD89;
+    box-shadow: 0 0 20px #32CD89;
+  }
+  100% {
+    transform: scale(1);
+    background-color: #3DED97;
+    box-shadow: 0 0 10px #3DED97;
+  }
+}
+.winBox {
+  animation: popGreen 0.5s ease-in-out infinite;
+  color: white; /* Ensure text is visible */
+  font-weight: bold;
+}
+

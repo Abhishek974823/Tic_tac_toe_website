@@ -21,6 +21,11 @@ status.style.marginTop = "20px";
 status.style.color = "#FF4C4C"; // Bright red
 status.style.textShadow = "0 0 10px rgba(255, 76, 76, 0.7)";
 }
+function win_boxes(buttons,i,j,k){
+    buttons[i].classList.add("winBox");
+    buttons[j].classList.add("winBox");
+    buttons[k].classList.add("winBox");
+}
 function winner(buttons,status){
     let draw = 0;
     for(i of buttons){
@@ -29,6 +34,7 @@ function winner(buttons,status){
         }
     }
     if(buttons[0].innerText != "" && buttons[0].innerText === buttons[1].innerText && buttons[1].innerText === buttons[2].innerText){
+        win_boxes(buttons,0,1,2);
         click = 1;
         if(flag === 1){
             status.innerText = "O Wins";
@@ -41,6 +47,7 @@ function winner(buttons,status){
         
     }
     else if(buttons[3].innerText != "" && buttons[3].innerText === buttons[4].innerText && buttons[4].innerText === buttons[5].innerText){
+        win_boxes(buttons,3,4,5);
         click = 1;
         if(flag === 1){
             status.innerText = "O Wins";
@@ -53,6 +60,7 @@ function winner(buttons,status){
         
     }
     else if( buttons[6].innerText != "" && buttons[6].innerText === buttons[7].innerText && buttons[7].innerText === buttons[8].innerText){
+        win_boxes(buttons,6,7,8);
         click = 1;
         if(flag === 1){
             status.innerText = "O Wins";
@@ -65,6 +73,7 @@ function winner(buttons,status){
         
     }
     else if( buttons[0].innerText != "" && buttons[0].innerText === buttons[3].innerText && buttons[3].innerText === buttons[6].innerText){
+        win_boxes(buttons,0,3,6);
         click = 1;
         if(flag === 1){
             status.innerText = "O Wins";
@@ -77,6 +86,7 @@ function winner(buttons,status){
         
     }
     else if( buttons[1].innerText != "" && buttons[1].innerText === buttons[4].innerText && buttons[4].innerText === buttons[7].innerText){
+        win_boxes(buttons,1,4,7);
         click = 1;
         if(flag === 1){
             status.innerText = "O Wins";
@@ -89,6 +99,7 @@ function winner(buttons,status){
         
     }
     else if( buttons[2].innerText != "" && buttons[2].innerText === buttons[5].innerText && buttons[5].innerText === buttons[8].innerText){
+        win_boxes(buttons,2,5,8);
         click = 1;
         if(flag === 1){
             status.innerText = "O Wins";
@@ -101,6 +112,7 @@ function winner(buttons,status){
         
     }
     else if( buttons[0].innerText != "" && buttons[0].innerText === buttons[4].innerText && buttons[4].innerText === buttons[8].innerText){
+        win_boxes(buttons,0,4,8);
         click = 1;
         if(flag === 1){
             status.innerText = "O Wins";
@@ -113,6 +125,7 @@ function winner(buttons,status){
         
     }
     else if( buttons[2].innerText != "" && buttons[2].innerText === buttons[4].innerText && buttons[4].innerText === buttons[6].innerText){
+        win_boxes(buttons,2,4,6);
         click = 1;
         if(flag === 1){
             status.innerText = "O Wins";
@@ -142,6 +155,7 @@ let reset = () => {
     i.innerText = "";
     flag = 1;
     click = 0;
+    i.classList.remove("winBox");
 }
 stat.innerText = "Two Players Game"; // or any message you want
 stat.style.animation = "blinkGlow 1.2s infinite";
